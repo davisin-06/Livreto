@@ -1,0 +1,3186 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Livreto de Oração</title>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Matemasie&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Edu+VIC+WA+NT+Beginner:wght@400..700&family=Matemasie&display=swap');
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #47051b;
+            height: 100vh;
+            width: 100vw;
+            margin: 0;
+            display: flex;
+            position: relative;
+
+
+        }
+
+        .cima {
+            width: 100vw;
+            top: 50%;
+            left: 50%;
+            margin: 10px 50px;
+
+        }
+
+        .esquerdo {
+            background: #c95b4d;
+            width: 40vw;
+            height: 73.8vh;
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50px;
+            position: absolute;
+            top: 15%;
+            left: 0%;
+            box-shadow: 30px 60px 40px rgb(0, 0, 0);
+        }
+
+        .container {
+            background-color: #c95b4d;
+            padding: 20px;
+            border-radius: 40px;
+            box-shadow: 30px 50px 50px rgb(0, 0, 0);
+            text-align: center;
+            box-sizing: border-box;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin: -100px 50px;
+        }
+
+        input {
+            width: 80%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #a1a1a1;
+            border-radius: 4px;
+
+        }
+
+        .btn1 {
+            padding: 10px 20px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            text-transform: uppercase;
+            font-family: 'Edu Vic Wa Nt Beginner', sans-serif;
+        }
+
+        .btn1:hover {
+            background-color: #196129;
+        }
+
+        .btn2 {
+            color: white;
+            height: 50px;
+            width: 40px;
+            background-color: #28a745;
+            border: none;
+            border-radius: 45px;
+            cursor: pointer;
+            text-transform: uppercase;
+            font-family: 'Edu Vic Wa Nt Beginner', sans-serif;
+
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 5px;
+            background-color: #ffffff;
+            border-radius: 15px;
+            border: 1px solid #a1a1a1;
+
+            text-align: center;
+        }
+
+        p {
+            margin: 4px 0;
+            padding: 5px;
+            border-radius: 4px;
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-start;
+            text-align: justify;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="cima"><audio id="audioPrincipal" src="Katsbarnea-Extra.mp3" controls></audio>
+
+        <button class="btn2" onclick="MudarLouvor1()">▶¹</button>
+
+        <button class="btn2" onclick="MudarLouvor2()">▶²</button>
+
+        <button class="btn2" onclick="MudarLouvor3()">▶³</button>
+
+        <audio id="audio1" src="Katsbarnea-Extra.mp3"></audio>
+
+        <audio id="audio2" src="Pai e Filho - Voz da Verdade 45 ANOS - Inédita 2023 (320).mp3"></audio>
+
+        <audio id="audio3" src="SergioLopes1-o-amigo-7b92115b.mp3"></audio>
+    </div>
+
+
+    <div class="esquerdo">
+        <img class="esquerdo" src="reading-glasses-animate.svg" alt="Cacto">
+
+    </div>
+    <div class="direito">
+        <div class="container">
+            <h1 style="font-family: 'Matemasie', sans-serif; color: #520b02;">Livreto de Oração</h1>
+            <input type="number" id="Dia" placeholder="Escreva o dia atual.">
+            </audio>
+            <br>
+            <button class="btn1" onclick="buscarLivro()">Procurar</button>
+            <ul id="lista_biblia">
+
+            </ul>
+
+        </div>
+
+
+    </div>
+
+
+    <script>
+        var lista_biblia = [
+            {
+                dia: 1,
+                livro: "Salmos 31",
+                versos: [
+                    {
+                        Titulo: "Salmos 31",
+                        texto: "Senhor livra-nos do caos e das acusações injustas. Protege-nos dos inimigos que tentam nos afastar de Ti."
+                    },
+                    {
+                        Titulo: "",
+                        texto: "Responda Senhor todas as nossas orações. Produza uma fé firmada nas suas promessas, para que não sejamos levados pelas dúvidas e incertezas"
+                    },
+                    {
+                        Titulo: "",
+                        texto: "Por amor do seu Nome, guia e cuida de nós em cada detalhe da nossa vida."
+                    },
+                    {
+                        Titulo: "",
+                        texto: "Livra-nos de todas as armadilhas e frustrações que o inimigo faz secretamente."
+                    },
+                    {
+                        Titulo: "",
+                        texto: "Pois somos totalmente do Senhor, comprados pelo Sangue de Jesus Cristo!"
+                    },
+                    {
+                        Titulo: "",
+                        texto: "Não andamos com aqueles que vivem na prática do pecado. Não aprovamos as obras infrutuosas das trevas."
+                    },
+                    {
+                        Titulo: "",
+                        texto: "Pois somos totalmente do Senhor, comprados pelo Sangue de Jesus Cristo!"
+                    },
+                    {
+                        Titulo: "",
+                        texto: "Pois o Senhor tem sido bom o tempo todo para conosco e por isso te louvamos. O Senhor, nos tem feito o bem o tempo todo, por isso te adoramos!"
+                    },
+                    {
+                        Titulo: "",
+                        texto: "Senhor ajuda seu povo a confiar em Ti em todas as coisas, para que não vivam ansiosos e depressivos"
+                    },
+                    {
+                        Titulo: "",
+                        texto: "Livra seu povo de todas as enfermidades causadas pelos distúrbios comportamentais, emocionais, mentais e espirituais."
+                    },
+                    {
+                        Titulo: "",
+                        texto: "Que seu povo seja livre das enfermidades que vem sobre os ímpios."
+                    },
+                    {
+                        Titulo: "",
+                        texto: "Pois o seu povo confia plenamente na sua bondosa vontade."
+                    },
+                    {
+                        Titulo: "",
+                        texto: "Senhor livra-nos da perseguição dos que desejam o nosso mal o tempo todo."
+                    },
+                    {
+                        Titulo: "",
+                        texto: "Senhor que todos os nossos inimigos possam reconhecer que o Senhor está conosco e isso os faça temer e tremor por sua presença."
+                    },
+                    {
+                        Titulo: "",
+                        texto: "O Senhor é bom para o seu povo! O Senhor opera coisas grandiosas no nosso meio. O Senhor tem provido grandes vitórias!"
+                    },
+                    {
+                        Titulo: "",
+                        texto: "O Senhor nos tem dado muito mais abundante do que temos pedido."
+                    },
+                    {
+                        Titulo: "",
+                        texto: "O senhor nos tem prosperado aos olhos dos ímpios para que vejam o seu amor pelo seu povo."
+                    },
+                    {
+                        Titulo: "",
+                        texto: "Por isso nossa igreja, não mede esforços para te servir de todo coração! Por isso estamos em todos os cultos para de adorar e agradecer! Por isso amamos a leitura devocional e com alegria te buscamos com oração e jejum."
+                    },
+                    {
+                        Titulo: "Oramos pela Somália",
+                        texto: "Para que o governo tenha sabedoria em conter e frustrar os ataques dos extremistas islâmicos"
+                    },
+                    {
+                        Titulo: "",
+                        texto: "Que acabe toda opressão islâmica, toda corrupção e ditadura."
+                    },
+                    {
+                        Titulo: "",
+                        texto: "Intercedemos para que os cristãos de origem muçulmana sintam-se protegidos e cuidados por Deus."
+                    },
+                    {
+                        Titulo: "",
+                        texto: "Que todo investimento para que as crianças muçulmanas se tornem radicais islâmicos, fracasse"
+                    },
+                    {
+                        Titulo: "",
+                        texto: "Clamamos para que os muçulmanos, familiares de cristãos, conheçam a Jesus por meio do testemunho dos parentes."
+                    },
+                    {
+                        Titulo: "",
+                        texto: "Oramos para que as comunidades na Somália sejam impactadas pelo amor e pela graça de Deus"
+                    },
+                    {
+                        Titulo: "",
+                        texto: " Pedimos Senhor, que líderes religiosos do islã se abram para ler e entender mais sobre a Bíblia e a fé cristã."
+                    }
+                ]
+            },
+            {
+                dia: 2,
+                livro: "Salmos 32",
+                versos: [
+                    {
+                        Titulo: "Salmos 32",
+                        texto: "Santo Deus, te louvamos porque derrama tuas bênçãos sobre os corações arrependidos, até que não haja mais espaço para recebê-las. Só Tu, Senhor, quebras maldições e removes obstáculos para receber a bênção."
+                    },
+                    {
+                        Titulo: "",
+                        texto: "Agradeço por tua grande misericórdia, e de nos conduzir ao arrependimento quando envergonhamos o teu nome."
+                    },
+                    {
+                        Titulo: "",
+                        texto: "Faz de nós servos prontos para confessar humildemente nossos pecados, sem adiar uma confissão arrependida que possa afetar nossa comunhão contigo"
+                    },
+                    {
+                        Titulo: "",
+                        texto: "Ensina-nos a encontrar paz por meio da fé e orações fervorosas, pois só em Ti encontramos descanso para a alma"
+                    },
+                    {
+                        Titulo: "",
+                        texto: "Compreendemos que a prosperidade contigo não ocorre se permanecermos orgulhosos e soberbos, sem confessar nossos pecados."
+                    },
+                    {
+                        Titulo: "",
+                        texto: "Desejamos ser verdadeiros cristãos, felizes em orar diariamente, vencendo o pecado e resistindo às tentações malignas. Corremos para Ti, pois tua presença nos traz segurança e alegria."
+                    },
+                    {
+                        Titulo: "",
+                        texto: "Que o Senhor nos ensine diariamente por meio da leitura devocional, para que não sejamos inconstantes espirituais, controlados por apetites e paixões."
+                    },
+                    {
+                        Titulo: "",
+                        texto: "Estamos certo de que se o amarmos de todo nosso coração, vivendo para Ti e confiando unicamente em Ti, tua misericórdia nos cercará por todos os lados."
+                    },
+                    {
+                        Titulo: "",
+                        texto: "Que nossa experiência contigo seja tão extraordinária que impacte a vida daqueles ao nosso redor, em casa, no trabalho e nos estudos, com as bênçãos divinas."
+                    },
+                    {
+                        Titulo: "Oramos pela Líbia",
+                        texto: "Para que o Senhor levante um governo interessado no bem-estar da população e no fim da ação de grupos extremistas e criminosos"
+                    },
+                    {
+                        Titulo: "",
+                        texto: " Clamamos a Ti pelos cristãos secretos, para que tenham sabedoria e coragem de seguir a Jesus."
+                    },
+                    {
+                        Titulo: "",
+                        texto: "Intercedemos para que o ministério de evangelismo por meio de TV e internet no Norte da África alcance mais pessoas."
+                    },
+                    {
+                        Titulo: "",
+                        texto: "Oramos para que mais cristãos líbios tenham contato com o evangelho."
+                    },
+                    {
+                        Titulo: "",
+                        texto: "Que o Senhor se levante contra toda opressão islâmica, e corrupção deste país."
+                    },
+                    {
+                        Titulo: "",
+                        texto: "Alcance o coração desses líderes religiosos e políticos não cristãos para que nossos irmãos não sejam atingidos com tanta hostilidade."
+                    }
+                ]
+            },
+            {
+                dia: 3,
+                livro: "Salmos 33",
+                versos: [
+                    {
+                        Titulo: "Salmos 33",
+                        texto: "Senhor, nós estamos muito alegres, nós te adoramos por tudo o que o Senhor faz por nós."
+                    },
+                    {
+                        Titulo: "",
+                        texto: "Cantamos com alegria e com muito entusiasmo e com todos os nossos instrumentos, para festejar o seu Nome."
+                    },
+                    {
+                        Titulo: "",
+                        texto: "Senhor faz um avivamento na nossa adoração. Que tua presença nos encha de gozo e cânticos espirituais. Que os dons sobrenaturais do seu Espírito esteja presente em todas as nossas reuniões"
+                    },
+                    {
+                        Titulo: "",
+                        texto: "Que nossa pregação seja cheia de jubilo e confirmado pelos sinais poderosos do Espírito Santo."
+                    },
+                    {
+                        Titulo: "",
+                        texto: "Que possamos produzir os frutos da justiça, e que sejamos bondosos e generosos uns com os outros."
+                    },
+                    {
+                        Titulo: "",
+                        texto: "Que o poder da Palavra de Deus, possa produzir grandes transformações em nós e naqueles que vivem ao nosso redor."
+                    },
+                    {
+                        Titulo: "",
+                        texto: "Que nossa cidade e nosso país, veja o grande mover que virá sobre a igreja fiel e verdadeira."
+                    },
+                    {
+                        Titulo: "",
+                        texto: "Que essa geração seja impactada e seus efeitos caia sobre novas gerações."
+                    },
+                    {
+                        Titulo: "",
+                        texto: "O Senhor conhece todos os corações, e pode fazer as mudanças que essa geração precisa."
+                    },
+                    {
+                        Titulo: "",
+                        texto: "Nenhum governo ou ideologia, pode salvar as nações, mais o Evangelho é o poder de Deus para salvação. O Senhor tem o controle da história, e pode mudar os rumos da nossa nação."
+                    },
+                    {
+                        Titulo: "",
+                        texto: "Só o Senhor tem o poder de transformar todas as coisas. O Senhor tem a solução para todas as coisas. O Senhor tem tudo o que precisamos!"
+                    },
+                    {
+                        Titulo: "",
+                        texto: "O Senhor é o amado da nossa alma e temos confiado no poder do Nome de Jesus Cristo, que tem toda autoridade no céu e na terra. Em ti Jesus confiamos!"
+                    },
+                    {
+                        Titulo: "Oramos pela Eritréia",
+                        texto: "Para que a justiça de Deus seja feita em favor dos cristãos eritreus que foram presos e torturados, que eles sejam libertos das prisões físicas, emocionais e espirituais."
+                    },
+                    {
+                        Titulo: "",
+                        texto: "Tenha misericórdia destes mais de mil cristãos presos injustamente. Ouve o clamor destes irmãos confinados nas pequenas celas e solitárias."
+                    },
+                    {
+                        Titulo: "",
+                        texto: "Oramos para que o Senhor prepare um lindo futuro para todos aqueles que perderam tudo por amor a Ti."
+                    },
+                    {
+                        Titulo: "",
+                        texto: "Intercedemos para que os direitos humanos sejam respeitados na Eritreia e as pessoas tenham liberdade para adorar a Deus."
+                    },
+                    {
+                        Titulo: "",
+                        texto: "Que o Senhor responda a toda corrupção, crime organizado e opressão islâmica que se levantou contra sua igreja. Que um milagre aconteça e o Evangelho seja livremente pregando neste país."
+                    }
+                ]
+            },
+            {
+                dia: 4,
+                livro: "Salmos 34",
+                versos: [
+                    {
+                        Titulo: "Salmos 34",
+                        texto: "Senhor seja nossa única fonte de alegria. Glória ao Nome de Jesus Cristo!"
+                    },
+                    {
+                        Titulo: "",
+                        texto: "Te louvamos Senhor, pois tens respondido graciosamente todas as nossas orações e tem nos curados de todas as nossas enfermidades."
+                    },
+                    {
+                        Titulo: "",
+                        texto: "Nunca houve, entre nós, alguém que tenha confiado em ti, que não tenha sido recompensado"
+                    },
+                    {
+                        Titulo: "",
+                        texto: "O Senhor tem curado as emoções do seu povo! O Senhor tem livrado e curado distúrbios e transtornos no meio do seu povo!"
+                    },
+                    {
+                        Titulo: "",
+                        texto: "Os anjos do Senhor têm nos guardado e livrado a todo momento."
+                    },
+                    {
+                        Titulo: "",
+                        texto: "Obrigado Senhor, somos muito felizes, pois temos provado e visto sua bondade. Temos vivido seu grande mover no nosso meio."
+                    },
+                    {
+                        Titulo: "",
+                        texto: "Temos confiado em ti, o Senhor tem nos dados generosamente todas as coisas, da quais não merecemos, e de nada temos falta! Em tudo temos abundância!"
+                    },
+                    {
+                        Titulo: "",
+                        texto: "O Senhor renova a força dos que amam fazer sua obra. Regenera seu corpo físico e as emoções! Restaura o vigor juvenil do seu povo!"
+                    },
+                    {
+                        Titulo: "",
+                        texto: "Livra seus filhos das enfermidades, e que sejam saudáveis em tudo. Para que possam valorosamente cumprir seus chamados"
+                    },
+                    {
+                        Titulo: "",
+                        texto: "Que possamos ser uma igreja viva, operosa, santa, piedosa e prospera."
+                    },
+                    {
+                        Titulo: "",
+                        texto: "Que todos saibam que o Senhor é conosco, porque escolhemos viver uma vida que agrada aos seus olhos."
+                    },
+                    {
+                        Titulo: "",
+                        texto: "Que todas as promessas estejam sendo desfrutas em nosso meio!"
+                    },
+                    {
+                        Titulo: "",
+                        texto: "Que tudo o que Senhor fizer, faça primeiramente conosco!"
+                    },
+                    {
+                        Titulo: "",
+                        texto: "O Senhor resgatou nossa alma do pecado, e por isso confiamos em Ti."
+                    },
+                    {
+                        Titulo: "Oramos pelo Iêmen",
+                        texto: "Para que o Senhor derrame paz e amor sobre esse país por meio dos cristãos locais"
+                    },
+                    {
+                        Titulo: "",
+                        texto: "Intercedemos para que os cristãos secretos sejam guardados e fortalecidos."
+                    },
+                    {
+                        Titulo: "",
+                        texto: "Clamamos para que as famílias sejam impactadas pelo amor de Deus expressado nas atitudes dos cristãos"
+                    },
+                    {
+                        Titulo: "",
+                        texto: "Oramos para que mais iemenitas encontrem a Jesus e decidam segui-lo, apesar da perseguição. Proteja, Senhor, todo aquele que decidir te seguir apesar da presença de grupos militantes islâmicos."
+                    },
+                    {
+                        Titulo: "",
+                        texto: "Suplicamos para que os convertidos de origem islâmica tenham sabedoria e coragem para compartilhar a fé e que a igreja secreta cresça."
+                    },
+                    {
+                        Titulo: "",
+                        texto: "Que o Senhor se levante por uma mudança no Iêmen, que a paz venha sobre essa nação, e que acabe toda guerra e crise humanitária"
+                    }
+                ]
+            },
+            {
+                dia: 5,
+                livro: "",
+                versos: [
+                    {
+                        Titulo: "Salmos 35",
+                        texto: "Senhor livra-nos do caos e das acusações injustas. Protege-nos dos inimigos que tentam nos afastar de Ti."
+                    },
+                    {
+                        Titulo: "",
+                        texto: "Responda Senhor todas as nossas orações. Produza uma fé firmada nas suas promessas, para que não sejamos levados pelas dúvidas e incertezas"
+                    },
+                    {
+                        Titulo: "",
+                        texto: "Por amor do seu Nome, guia e cuida de nós em cada detalhe da nossa vida."
+                    },
+                    {
+                        Titulo: "",
+                        texto: "Livra-nos de todas as armadilhas e frustrações que o inimigo faz secretamente."
+                    },
+                    {
+                        Titulo: "",
+                        texto: "Pois somos totalmente do Senhor, comprados pelo Sangue de Jesus Cristo!"
+                    },
+                    {
+                        Titulo: "",
+                        texto: "Não andamos com aqueles que vivem na prática do pecado. Não aprovamos as obras infrutuosas das trevas."
+                    },
+                    {
+                        Titulo: "",
+                        texto: "Pois somos totalmente do Senhor, comprados pelo Sangue de Jesus Cristo!"
+                    },
+                    {
+                        Titulo: "",
+                        texto: "Pois o Senhor tem sido bom o tempo todo para conosco e por isso te louvamos. O Senhor, nos tem feito o bem o tempo todo, por isso te adoramos!"
+                    },
+                    {
+                        Titulo: "",
+                        texto: "Senhor ajuda seu povo a confiar em Ti em todas as coisas, para que não vivam ansiosos e depressivos"
+                    },
+                    {
+                        Titulo: "",
+                        texto: "Livra seu povo de todas as enfermidades causadas pelos distúrbios comportamentais, emocionais, mentais e espirituais."
+                    },
+                    {
+                        Titulo: "",
+                        texto: "Que seu povo seja livre das enfermidades que vem sobre os ímpios."
+                    },
+                    {
+                        Titulo: "",
+                        texto: "Pois o seu povo confia plenamente na sua bondosa vontade."
+                    },
+                    {
+                        Titulo: "",
+                        texto: "Senhor livra-nos da perseguição dos que desejam o nosso mal o tempo todo."
+                    },
+                    {
+                        Titulo: "",
+                        texto: "Senhor que todos os nossos inimigos possam reconhecer que o Senhor está conosco e isso os faça temer e tremor por sua presença."
+                    },
+                    {
+                        Titulo: "",
+                        texto: "O Senhor é bom para o seu povo! O Senhor opera coisas grandiosas no nosso meio. O Senhor tem provido grandes vitórias!"
+                    },
+                    {
+                        Titulo: "",
+                        texto: "O Senhor nos tem dado muito mais abundante do que temos pedido."
+                    },
+                    {
+                        Titulo: "",
+                        texto: "O senhor nos tem prosperado aos olhos dos ímpios para que vejam o seu amor pelo seu povo."
+                    },
+                    {
+                        Titulo: "",
+                        texto: "Por isso nossa igreja, não mede esforços para te servir de todo coração! Por isso estamos em todos os cultos para de adorar e agradecer! Por isso amamos a leitura devocional e com alegria te buscamos com oração e jejum."
+                    },
+                    {
+                        Titulo: "Oramos pela Somália",
+                        texto: "Para que o governo tenha sabedoria em conter e frustrar os ataques dos extremistas islâmicos"
+                    },
+                    {
+                        Titulo: "",
+                        texto: "Que acabe toda opressão islâmica, toda corrupção e ditadura."
+                    },
+                    {
+                        Titulo: "",
+                        texto: "Intercedemos para que os cristãos de origem muçulmana sintam-se protegidos e cuidados por Deus."
+                    },
+                    {
+                        Titulo: "",
+                        texto: "Que todo investimento para que as crianças muçulmanas se tornem radicais islâmicos, fracasse"
+                    },
+                    {
+                        Titulo: "",
+                        texto: "Clamamos para que os muçulmanos, familiares de cristãos, conheçam a Jesus por meio do testemunho dos parentes."
+                    },
+                    {
+                        Titulo: "",
+                        texto: "Oramos para que as comunidades na Somália sejam impactadas pelo amor e pela graça de Deus"
+                    },
+                    {
+                        Titulo: "",
+                        texto: " Pedimos Senhor, que líderes religiosos do islã se abram para ler e entender mais sobre a Bíblia e a fé cristã."
+                    }
+                ]
+            },
+            {
+                dia: 6,
+                livro: "Salmos 36",
+                versos: [
+                    {
+                        Titulo: "Salmos 36",
+                        texto: "Senhor, purifica a nossa mente, livra-nos dos maus pensamentos, que tenhamos temor diante dos teus olhos."
+                    },
+                    {
+                        Titulo: "",
+                        texto: "Que não tenhamos prazer no pecado, ajude-nos a detestar a iniquidade. Que não haja malícia e engano na nossa boca. Não nos deixe falar mal de ninguém."
+                    },
+                    {
+                        Titulo: "",
+                        texto: "Livra-nos dos maus intentos, não nos deixe andar em um caminho que não te agrada. Ensina-nos a fugir de toda a aparência do mal"
+                    },
+                    {
+                        Titulo: "",
+                        texto: "Senhor confiamos na grandeza da sua misericórdia e fidelidade, para viver uma vida de santidade, tanto quanto seja possível desse lado de cá."
+                    },
+                    {
+                        Titulo: "",
+                        texto: "Obrigado por tua graça que lançou sobre nós a justiça de Cristo, tornando nos aceitáveis aos seus olhos. Obrigado por todo o cuidado com nossa vida."
+                    },
+                    {
+                        Titulo: "",
+                        texto: "Oh graça maravilhosa, que nos alcançou sendo nós ainda pecadores, nos dando abrigo debaixo de suas asas."
+                    },
+                    {
+                        Titulo: "",
+                        texto: "Senhor te louvamos por tua generosidade em nos prosperar ricamente em todas as coisas e podermos desfrutar dos seus bens."
+                    },
+                    {
+                        Titulo: "",
+                        texto: "Tu és a verdadeira vida, que a luz do evangelho resplandeça através de nós."
+                    },
+                    {
+                        Titulo: "",
+                        texto: "Que sua mão esteja estendida sobre aqueles que obedecem a tua palavra. E a tua justiça sobre os que tem um coração puro."
+                    },
+                    {
+                        Titulo: "",
+                        texto: "Livra-nos da maldade das pessoas ímpias. Livra seu povo das maquinações dos homens perversos."
+                    },
+                    {
+                        Titulo: "Oramos pelo Paquistão",
+                        texto: "Para que cristãos sejam levantados por Deus para ocupar espaços de liderança no país e governem com justiça e igualdade para todos."
+                    },
+                    {
+                        Titulo: "",
+                        texto: "Clamamos para que a morte do pastor Siraj e de outros cristãos seja como sementes para a propagação do evangelho no Paquistão."
+                    },
+                    {
+                        Titulo: "",
+                        texto: "Intercedemos por consolo e cura de Deus a todos que perderam entes queridos em ataques extremistas."
+                    },
+                    {
+                        Titulo: "",
+                        texto: "Oramos para que o Espírito Santo toque na vida dos jihadistas e que tenham um encontro com Cristo."
+                    },
+                    {
+                        Titulo: "",
+                        texto: "Te louvamos pela recuperação, restauração, e cura de cada cristão que sobrevive aos ataques e perseguições. Que cada testemunho posso levar os perseguidores a Cristo."
+                    },
+                    {
+                        Titulo: "",
+                        texto: "Intercedemos para que mais cristãos sejam instrumentos de cura para outros atingidos pela intolerância religiosa."
+                    }
+                ]
+            },
+            {
+                dia: 7,
+                livro: "Salmos 37",
+                versos: [
+                    {
+                        Titulo: "Salmos 37",
+                        texto: "Senhor ajuda-nos a não amar o mundo e nem aquilo que há no mundo, pois o que há no mundo é fútil e passageiro."
+                    },
+                    {
+                        Titulo: "",
+                        texto: "Confiamos no seu favor, para fazer o bem. Que possamos ser um valente da verdade nesse mundo perdido"
+                    },
+                    {
+                        Titulo: "",
+                        texto: "Senhor queremos agradar-te em todas as coisas. Cumpra em nós o teu querer, pois a sua vontade é boa, perfeita e agradável."
+                    },
+                    {
+                        Titulo: "",
+                        texto: "Confiamos no Senhor todo o nosso futuro, sabendo que o Senhor fará por nós muito mais abundante além daquilo que pensamos ou pedimos. os principados de corrupção caiam em nome de Jesus Cristo."
+                    },
+                    {
+                        Titulo: "",
+                        texto: "Que o Senhor faça sobressair sua justiça e bondade sobre as nações, e que os principados de corrupção caiam em nome de Jesus Cristo."
+                    },
+                    {
+                        Titulo: "",
+                        texto: "Descansamos no Senhor e esperamos em ti, para que o mal não prospere em nossa nação. Que todo projeto que se levante contra tua Palavra caia por terra. Que nenhuma lei contra o evangelho prospere. E que toda injustiça seja vingada pela tua bondade."
+                    },
+                    {
+                        Titulo: "",
+                        texto: "Livra-nos de abrir nossa boca para falar mal de nossas autoridades, pois todo mal será julgado a seu tempo."
+                    },
+                    {
+                        Titulo: "",
+                        texto: "Logo herdaremos essa terra e reinaremos com Cristo para sempre. Oramos Maranata, ora vem Senhor Jesus, para buscar sua igreja."
+                    },
+                    {
+                        Titulo: "",
+                        texto: "O Senhor recompensará a cada um segundo suas obras. Senhor ajuda-nos a produzir frutos íntegros e justos."
+                    },
+                    {
+                        Titulo: "",
+                        texto: "Senhor dai-nos um coração generoso. Confirma os nossos passos conforme sua Palavra. Livra-nos da queda. Livra-nos de pecar contra ti."
+                    },
+                    {
+                        Titulo: "",
+                        texto: "O Senhor provê todas as coisas para o seu povo, não teremos falta de nada."
+                    },
+                    {
+                        Titulo: "",
+                        texto: "Ajuda-nos e não nos desampara. Que nossos filhos conheçam a ti desde cedo, para que possam herdar suas promessas."
+                    },
+                    {
+                        Titulo: "",
+                        texto: "Dai-nos sabedoria em tudo, que nossa boca se encha de palavra agradáveis."
+                    },
+                    {
+                        Titulo: "",
+                        texto: "Ajuda-nos na leitura devocional das Escrituras, para que sejamos fortalecidos."
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: "Livra nossas casas dos homens maus, que eles não prosperem em seus roubos e perversidades."
+                    },
+                    {
+                        Titulo: "",
+                        texto: "Livra-nos de nossos inimigos, Senhor tu és a nossa salvação, seja nossa fortaleza em nossas tribulações. Glorificado seja o teu nome, pois o Senhor sempre ouve as orações do seu povo."
+                    },
+                    {
+                        Titulo: "Oramos pela Coreia do Norte",
+                        texto: "Para que as muralhas espirituais caiam e o país se abra para o evangelho"
+                    },
+                    {
+                        Titulo: "",
+                        texto: "Oramos pela vida do líder Kim, para que cesse a ditadura e a opressão comunista, por parte de todas as autoridades."
+                    },
+                    {
+                        Titulo: "",
+                        texto: "Te agradecemos Senhor por acolher os norte-coreanos como filhos amados."
+                    },
+                    {
+                        Titulo: "",
+                        texto: "Suplicamos para que mais pessoas conheçam o salvador na Coreia do Norte, que os norte-coreanos refugiados na China sejam transformados pelo evangelho, que os familiares dos refugiados que permanecem no país sejam cuidados por Deus e tenham um encontro com Ele."
+                    },
+                    {
+                        Titulo: "",
+                        texto: "Louvamos ao Senhor pelos líderes cristãos que eles sejam guardados de todo mal, que os cristãos norte-coreanos experimentem o amor e o cuidado de Jesus."
+                    }
+                ]
+            },
+            {
+                dia: 8,
+                livro: "Salmos 38",
+                versos: [
+                    {
+                        Titulo: "Salmos 38",
+                        texto: "Senhor, não nos trate segundo os nossos pecados. Produza em nós uma profunda convicção de pecados, para que lamentemos nossa miséria"
+                    },
+                    {
+                        Titulo: "",
+                        texto: "Livra-nos por misericórdia da tua indignação, não nos castigue na tua ira."
+                    },
+                    {
+                        Titulo: "",
+                        texto: "Não há nada de bom em nós Senhor. Nosso coração se enche de tristezas e perturbações por causa dos nossos pecados."
+                    },
+                    {
+                        Titulo: "",
+                        texto: "Senhor ajuda-nos pois o pecado rouba a força do seu povo. Livra-nos de uma consciência cauterizada e de um coração insensível por causa do pecado."
+                    },
+                    {
+                        Titulo: "",
+                        texto: "Senhor conduza-nos a um arrependimento sincero, antes que o pecado, nos afaste de todos os que amamos."
+                    },
+                    {
+                        Titulo: "",
+                        texto: "Livra-nos daqueles que se opõe a nós e querem o nosso mal. Guarda-nos da língua maldizente, das calunias e injurias das pessoas más."
+                    },
+                    {
+                        Titulo: "",
+                        texto: "Senhor proteja o nosso coração da raiz de amargura e de todo ressentimento. Ajude-nos a orar e amar os que querem o nosso mal, como ensina a tua Palavra."
+                    },
+                    {
+                        Titulo: "",
+                        texto: "Não nos deixe viver mais um minuto no pecado. Abra nossos olhos, pois tu és a nossa salvação e em ti encontramos perdão e paz."
+                    },
+                    {
+                        Titulo: "Oramos pelo Sudão",
+                        texto: "Para que a paz prevaleça e que o Senhor estabeleça governantes que respeitem os direitos humanos e com a justiça. Que a liberdade religiosa seja uma realidade."
+                    },
+                    {
+                        Titulo: "",
+                        texto: "Te louvamos pelas libertações e pedimos que outros cristãos recebam o livramento de condenações injustas."
+                    },
+                    {
+                        Titulo: "",
+                        texto: "Intercedemos para que os cristãos perseguidos tenham liberdade de culto, que o senhor prospere ricamente o seu povo suprindo tudo."
+                    },
+                    {
+                        Titulo: "",
+                        texto: "Que nossos irmãos sudaneses se fortaleçam e se encorajem em Deus diante de tanto sofrimento."
+                    },
+                    {
+                        Titulo: "",
+                        texto: " Clamamos para que os muçulmanos, familiares de cristãos, conheçam a Jesus por meio do testemunho dos parentes."
+                    },
+                    {
+                        Titulo: "",
+                        texto: "Oramos pelo fim da violência no Sudão e pela provisão de Deus para os cristãos que estão deslocados no país."
+                    }
+                ]
+            },
+            {
+                dia: 9,
+                livro: "Salmos 39",
+                versos: [
+                    {
+                        Titulo: "Salmos 39",
+                        texto: "Senhor guarda os nossos caminhos. Livra-nos dos pecados da língua. Que as palavras que saiam da nossa boca possam produzir graça aqueles que ouvem."
+                    },
+                    {
+                        Titulo: "",
+                        texto: "Senhor ajuda-nos a não sermos tímidos para testemunhar de ti aos nossos amigos. Que todos possam saber que o amamos como Senhor e Salvador"
+                    },
+                    {
+                        Titulo: "",
+                        texto: "Senhor aqueça o nosso coração com a tua Palavra. Que possamos pregar a tempo e fora de tempo. Que sejamos ganhadores de almas para seu reino."
+                    },
+                    {
+                        Titulo: "",
+                        texto: "Senhor quanto mais perto chega aquele dia, que possamos ser mais humildes"
+                    },
+                    {
+                        Titulo: "",
+                        texto: "Não nos deixe viver uma vida fútil e sem frutos. Que as cosias do reino de Deus possa tomar primazia na nossa vida."
+                    },
+                    {
+                        Titulo: "",
+                        texto: "Ajuda-nos a viver a perfeição cristã, uma vida sem pecados voluntários."
+                    },
+                    {
+                        Titulo: "",
+                        texto: "Ensina-nos a santidade, tanto quanto seja possível ser santo."
+                    },
+                    {
+                        Titulo: "",
+                        texto: "Desejamos mansamente aceitar a disciplina e a repreensão do Senhor, visando nosso amadurecimento completo."
+                    },
+                    {
+                        Titulo: "",
+                        texto: "Senhor clamamos a ti, pois somos estrangeiros e peregrinos nessa terra. Não somos deste mundo. Livra o nosso coração de amar esse mundo tenebroso. Livra-nos da sedução dos prazeres passageiros desse mundo."
+                    },
+                    {
+                        Titulo: "",
+                        texto: "Ajuda-nos a vigiar nosso coração todos os dias, para que possamos acabar bem os nossos dias te servindo fielmente sem cair."
+                    },
+                    {
+                        Titulo: "Oramos pelo Irã",
+                        texto: "Oramos que iranianos tenham os olhos e corações abertos para Te conhecer."
+                    },
+                    {
+                        Titulo: "",
+                        texto: "Intercedemos para que o Senhor proteja nossos irmãos, que sejam corajosos diante do perigo de perder a vida."
+                    },
+                    {
+                        Titulo: "",
+                        texto: "Te louvamos pelas libertações dos cristãos presos injustamente. Cuide daqueles que estão presos e, continue derramando Seu Espírito sobre esse país."
+                    },
+                    {
+                        Titulo: "",
+                        texto: "Que as crianças sejam curadas diante a pressão e violência que enfrentam por suas famílias amarem a Jesus"
+                    },
+                    {
+                        Titulo: "",
+                        texto: "Clamamos por um avivamento poderoso sobre os cristãos iranianos que possam pregar operando os milagres e maravilhas, levando pecadores a Cristo."
+                    },
+                    {
+                        Titulo: "",
+                        texto: "Que os corações dos governantes iranianos sejam tocados com os testemunhos dos cristãos e eles permitam liberdade para todas as religiões."
+                    }
+                ]
+            },
+            {
+                dia: 10,
+                livro: "",
+                versos: [
+                    {
+                        Titulo: "Salmos 40",
+                        texto: "Senhor, ajuda-nos a esperar com paciência. Livra-nos de uma vida ansiosa, e que todas as minhas necessidades sejam satisfeitas por meio das orações."
+                    },
+                    {
+                        Titulo: "",
+                        texto: "O Senhor tem sido fiel e tirado o seu povo do fundo poço. O senhor tem dado esperança e firmeza aos seus filhos."
+                    },
+                    {
+                        Titulo: "",
+                        texto: "Senhor cantamos os grandes feitos do Senhor, para que outros temam."
+                    },
+                    {
+                        Titulo: "",
+                        texto: "Senhor somos muito felizes porque confiamos em ti. Não seguimos as mentiras soberbas dos ímpios."
+                    },
+                    {
+                        Titulo: "",
+                        texto: "Muitas são as tuas maravilhas para com seu povo. Tantas bençãos que nem podemos enumerar. Te louvamos por sua generosidade Senhor Jesus"
+                    },
+                    {
+                        Titulo: "",
+                        texto: "Tua graça imerecida ofereceu perdão aos nossos muitos pecados."
+                    },
+                    {
+                        Titulo: "",
+                        texto: "Tua Palavra revelou seu grande amor, em Jesus Cristo."
+                    },
+                    {
+                        Titulo: "",
+                        texto: "Encontramos alegria e contentamento em fazer a tua vontade em todas as coisas. E todos os dias lemos e guardamos a tua palavra no nosso coração."
+                    },
+                    {
+                        Titulo: "",
+                        texto: "Senhor que possamos amar e pregar a sua palavra a todo tempo."
+                    },
+                    {
+                        Titulo: "",
+                        texto: "Senhor que possamos anunciar a toda gente sua grande fidelidade e salvação."
+                    },
+                    {
+                        Titulo: "",
+                        texto: "Senhor tenha misericórdia. Guarda-nos por tua bondade e verdade."
+                    },
+                    {
+                        Titulo: "",
+                        texto: "Livra-nos de todos os males. Que tenhamos temor para não pecar. Que possamos amar as coisas santas."
+                    },
+                    {
+                        Titulo: "",
+                        texto: "Senhor compadece de nós e ajuda-nos a não cair em tentação. Purifica-nos de todos os nossos pecados"
+                    },
+                    {
+                        Titulo: "",
+                        texto: "Livra-nos de toda a violência dos homens maus. Guarda-nos daqueles que zombam dos valores bíblicos."
+                    },
+                    {
+                        Titulo: "",
+                        texto: "Glória seja dada a ti para todo sempre. Em ti nos alegramos todos os dias"
+                    },
+                    {
+                        Titulo: "",
+                        texto: "Mesmo tendo pouca força, o Senhor tem cuidado de nós. Fomos justificados e libertos da condenação e nos deu vida eterna."
+                    },
+                    {
+                        Titulo: "Oramos pelo Afeganistão",
+                        texto: "Para que o Senhor toque no coração dos líderes talibãs que perseguem os cristãos, que eles conheçam a Jesus e tenham a vida mudada."
+                    },
+                    {
+                        Titulo: "",
+                        texto: "Pedimos que os refugiados afegãos tenham um encontro com Jesus e vejam o agir de Deus mesmo nas dificuldades diárias para sobreviver."
+                    },
+                    {
+                        Titulo: "",
+                        texto: "Suplicamos para que os cristãos secretos no Afeganistão sejam guardados e sustentados por Deus."
+                    }
+                ]
+            },
+            {
+                dia: 11,
+                livro: "Salmos 41",
+                versos: [
+                    {
+                        Titulo: "Salmos 41",
+                        texto: "Senhor, somos felizes em ajudar os necessitados, como ensina a tua Palavra."
+                    },
+                    {
+                        Titulo: "",
+                        texto: "Somos generosamente abençoados e desfrutamos de seu cuidado em tudo."
+                    },
+                    {
+                        Titulo: "",
+                        texto: "O Senhor tem curado toda as nossas enfermidades, nos dado saúde e prolongada a nossa vida para te servir."
+                    },
+                    {
+                        Titulo: "",
+                        texto: "Somos ainda mais gratos, pelo perdão de todos os nossos pecados."
+                    },
+                    {
+                        Titulo: "",
+                        texto: "O Senhor tem nos livrados de todos os nossos inimigos. O Senhor tem guardado o seu povo e tudo o que pertence a ele."
+                    },
+                    {
+                        Titulo: "",
+                        texto: "O Senhor tem nos livrado daqueles que nos odeiam e falam mal de nós."
+                    },
+                    {
+                        Titulo: "",
+                        texto: "Não revidaremos, nem nos defenderemos, somente oraremos, pois a oração dará conta de todas as coisas."
+                    },
+                    {
+                        Titulo: "",
+                        texto: "Senhor ajuda-nos a lidar com as traições e rebeliões. Não deixa o nosso coração ficar amargurado e cheio de vingança. Ensina-nos a amar e orar por eles."
+                    },
+                    {
+                        Titulo: "",
+                        texto: "Senhor viveremos uma vida integra e santa diante da sua face."
+                    },
+                    {
+                        Titulo: "",
+                        texto: "Bendito seja o Senhor Jesus Cristo, pelos séculos dos séculos."
+                    },
+                    {
+                        Titulo: "Oramos pela Índia",
+                        texto: "Para que o Senhor sustente e cure nossos irmãos que perderam tudo por amor a Jesus."
+                    },
+                    {
+                        Titulo: "",
+                        texto: "Pedimos que os indianos percebam os problemas na ideologia hindu e respeitem a fé dos cristãos e de outras minorias."
+                    },
+                    {
+                        Titulo: "",
+                        texto: "Suplicamos para que os cristãos que enfrentam perseguição de familiares sejam socorridos por Deus e pela família na fé."
+                    },
+                    {
+                        Titulo: "",
+                        texto: "Intercedemos para que os familiares que perseguem os cristãos sejam alcançados por Sua misericórdia."
+                    },
+                    {
+                        Titulo: "",
+                        texto: "Te louvamos pelas conversões que acontecem, que eles continuem sendo supridos em todas as necessidades, e que eles sejam revestidos de amor e coragem para compartilhar o evangelho."
+                    },
+                    {
+                        Titulo: "",
+                        texto: "Que novas igrejas sejam plantadas na Índia e mais pessoas decidam seguir a Jesus."
+                    }
+                ]
+            },
+            {
+                dia: 12,
+                livro: "Salmos 42",
+                versos: [
+                    {
+                        Titulo: "Salmos 42",
+                        texto: "Senhor, estamos sedentos por Ti. Temos prazer em estar na tua casa."
+                    },
+                    {
+                        Titulo: "",
+                        texto: "Senhor que a nossa adoração seja cheia de quebrantamento e contrição. Que não fiquemos um dia sequer sem orar."
+                    },
+                    {
+                        Titulo: "",
+                        texto: "Que alegria Senhor estarmos na sua casa junto com outros irmãos, para podermos louvar e nos alegrar na tua Presença. Senhor que nunca nos afastemos da adoração na tua casa."
+                    },
+                    {
+                        Titulo: "",
+                        texto: "Senhor não nos deixe ser abatidos pela tristeza. Que todo sentimento depressivo seja desviado do nosso coração. Que possamos encher o nosso coração de toda a gratidão e confiança por tua grande Salvação."
+                    },
+                    {
+                        Titulo: "",
+                        texto: "Senhor livra-nos de cair em abismos depressivos e síndromes que destroem completamente a nossa alma."
+                    },
+                    {
+                        Titulo: "",
+                        texto: "Ajuda-nos a desfrutarmos da sua misericórdia. Enche o nosso coração de louvores e cânticos espirituais. Que a oração e Palavra seja nosso alimento todos os dias."
+                    },
+                    {
+                        Titulo: "",
+                        texto: "Guarda o nosso coração das feridas dos que nos odeiam, e zombam."
+                    },
+                    {
+                        Titulo: "",
+                        texto: "Que nenhum sentimento de pressão injuriante possa nos perturbar e roubar nossa paz. Louvamos ao Senhor, nossa esperança, e nos dará o seu favor."
+                    },
+                    {
+                        Titulo: "Oramos pela Síria",
+                        texto: "Para que o Senhor ajude seu povo a ser sal e luz após os terremotos devastadores que aconteceram."
+                    },
+                    {
+                        Titulo: "",
+                        texto: "Intercedemos para que os cristãos de origem muçulmana recebam força do Espírito Santo enquanto enfrentam oposição de suas famílias e comunidades."
+                    },
+                    {
+                        Titulo: "",
+                        texto: "Senhor encha os líderes dos dons sobrenaturais, para que seu povo vejam as tuas grandes obras e fortaleçam a sua fé."
+                    },
+                    {
+                        Titulo: "",
+                        texto: "Ajude nossos irmãos que são discriminados, que não podem ter um emprego."
+                    },
+                    {
+                        Titulo: "",
+                        texto: "Pedimos ao Senhor que se levante em favor dos nossos irmãos e acabe toda opressão islâmica, que possa haver liberdade religiosa neste país."
+                    },
+                    {
+                        Titulo: "",
+                        texto: "Suplicamos para que o Senhor dê alívio e vigor para os cristãos sírios tão feridos nas últimas décadas."
+                    }
+                ]
+            },
+            {
+                dia: 13,
+                livro: "",
+                versos: [
+                    {
+                        Titulo: "Salmos 43",
+                        texto: "Senhor Livra o seu povo dos governos perversos. Que todo atentado iniquo contra a igreja de Jesus, caia por terra. Que sistemas da maldade sejam destruídos."
+                    },
+                    {
+                        Titulo: "",
+                        texto: "Que o seu povo possa aprender a confiar somente em Ti e em nenhum outro sistema que propõe soluções humanas."
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "Oramos pela Somália",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    }
+                ]
+            },
+            {
+                dia: 3,
+                livro: "",
+                versos: [
+                    {
+                        Titulo: "Salmos 37",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "Oramos pela Somália",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    }
+                ]
+            },
+            {
+                dia: 3,
+                livro: "",
+                versos: [
+                    {
+                        Titulo: "Salmos 37",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "Oramos pela Somália",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    }
+                ]
+            },
+            {
+                dia: 3,
+                livro: "",
+                versos: [
+                    {
+                        Titulo: "Salmos 37",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "Oramos pela Somália",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    }
+                ]
+            },
+            {
+                dia: 3,
+                livro: "",
+                versos: [
+                    {
+                        Titulo: "Salmos 37",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "Oramos pela Somália",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    }
+                ]
+            },
+            {
+                dia: 3,
+                livro: "",
+                versos: [
+                    {
+                        Titulo: "Salmos 37",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "Oramos pela Somália",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    }
+                ]
+            },
+            {
+                dia: 3,
+                livro: "",
+                versos: [
+                    {
+                        Titulo: "Salmos 37",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "Oramos pela Somália",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    }
+                ]
+            },
+            {
+                dia: 3,
+                livro: "",
+                versos: [
+                    {
+                        Titulo: "Salmos 37",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "Oramos pela Somália",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    }
+                ]
+            },
+            {
+                dia: 3,
+                livro: "",
+                versos: [
+                    {
+                        Titulo: "Salmos 37",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "Oramos pela Somália",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    }
+                ]
+            },
+            {
+                dia: 3,
+                livro: "",
+                versos: [
+                    {
+                        Titulo: "Salmos 37",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "Oramos pela Somália",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    }
+                ]
+            },
+            {
+                dia: 3,
+                livro: "",
+                versos: [
+                    {
+                        Titulo: "Salmos 37",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "Oramos pela Somália",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    }
+                ]
+            },
+            {
+                dia: 3,
+                livro: "",
+                versos: [
+                    {
+                        Titulo: "Salmos 37",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "Oramos pela Somália",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    }
+                ]
+            },
+            {
+                dia: 3,
+                livro: "",
+                versos: [
+                    {
+                        Titulo: "Salmos 37",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "Oramos pela Somália",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: " Pedimos Senhor, que líderes religiosos do islã se abram para ler e entender mais sobre a Bíblia e a fé cristã."
+                    }
+                ]
+            },
+            {
+                dia: 3,
+                livro: "",
+                versos: [
+                    {
+                        Titulo: "Salmos 37",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "Oramos pela Somália",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    }
+                ]
+            },
+            {
+                dia: 3,
+                livro: "",
+                versos: [
+                    {
+                        Titulo: "Salmos 37",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "Oramos pela Somália",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    }
+                ]
+            },
+            {
+                dia: 3,
+                livro: "",
+                versos: [
+                    {
+                        Titulo: "Salmos 37",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "Oramos pela Somália",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    }
+                ]
+            },
+            {
+                dia: 3,
+                livro: "",
+                versos: [
+                    {
+                        Titulo: "Salmos 37",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "Oramos pela Somália",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    }
+                ]
+            },
+            {
+                dia: 3,
+                livro: "",
+                versos: [
+                    {
+                        Titulo: "Salmos 37",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "Oramos pela Somália",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    }
+                ]
+            },
+            {
+                dia: 3,
+                livro: "",
+                versos: [
+                    {
+                        Titulo: "Salmos 37",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "Oramos pela Somália",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    },
+                    {
+                        Titulo: "",
+                        texto: ""
+                    }
+                ]
+            },
+        ]
+
+        function buscarLivro() {
+            var dia = document.getElementById("Dia").value;
+
+
+            var livro_encontrado = null;
+            for (let posicao = 0; posicao < lista_biblia.length; posicao = posicao + 1) {
+                debugger
+                if (dia == lista_biblia[posicao].dia) {
+                    livro_encontrado = lista_biblia[posicao];
+                    break;
+                }
+            }
+
+            var lista_ul = document.getElementById("lista_biblia");
+            lista_ul.innerHTML = ""
+            if (livro_encontrado != null) {
+                var dia = ""
+                for (let posicao = 0; posicao < livro_encontrado.versos.length; posicao = posicao + 1) {
+                    dia = dia + `
+                    <p>
+                        <h4>${livro_encontrado.versos[posicao].Titulo}</h4>
+                        <span>${livro_encontrado.versos[posicao].texto}</span>
+                    </p>
+                `
+                }
+
+                lista_ul.innerHTML = dia
+            } else {
+                lista_ul.innerText = "Oração não encontrada!"
+            }
+
+        }
+
+        var AudioPrincipal = document.getElementById("audioPrincipal");
+        var Audio1 = document.getElementById("audio1")
+        var Audio2 = document.getElementById("audio2")
+        var Audio3 = document.getElementById("audio3")
+
+        function MudarLouvor1() {
+
+            AudioPrincipal.src = Audio1.src
+
+        }
+        function MudarLouvor2() {
+
+            AudioPrincipal.src = Audio2.src
+
+        } function MudarLouvor3() {
+
+            AudioPrincipal.src = Audio3.src
+
+        }
+
+
+
+
+    </script>
+</body>
+
+</html>
